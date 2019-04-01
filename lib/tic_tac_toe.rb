@@ -1,7 +1,11 @@
 require 'pry'
 
 class TicTacToe
+<<<<<<< HEAD
   def initialize
+=======
+  def initialize(board = nil)
+>>>>>>> 19bc5813254cbb365b14a85b1ab029412d274135
     @board = Array.new(9, " ")
   end
 
@@ -13,7 +17,11 @@ class TicTacToe
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
+<<<<<<< HEAD
     [2, 4, 6]
+=======
+    [6, 4, 2]
+>>>>>>> 19bc5813254cbb365b14a85b1ab029412d274135
   ]
 
   def display_board
@@ -49,6 +57,7 @@ class TicTacToe
   end
 
   def turn
+<<<<<<< HEAD
     player = current_player
 
     puts "Please enter 1-9"
@@ -60,6 +69,19 @@ class TicTacToe
       move(index, player)
       display_board
     else
+=======
+    puts "Please enter 1-9"
+
+    input = gets.strip
+    index = input_to_index(input)
+
+    if valid_move?(index)
+      move(index, current_player)
+      display_board
+    else
+      puts "Invalid move!"
+      puts "Please enter 1-9"
+>>>>>>> 19bc5813254cbb365b14a85b1ab029412d274135
       turn
     end
   end
@@ -84,11 +106,19 @@ class TicTacToe
   end
 
   def full?
+<<<<<<< HEAD
     @board.none?{|space| space === " "}
   end
 
   def draw?
     full?  && !won?
+=======
+    @board.none?{|space| space === " "} && !won?
+  end
+
+  def draw?
+    full?
+>>>>>>> 19bc5813254cbb365b14a85b1ab029412d274135
   end
 
   def over?
@@ -101,10 +131,14 @@ class TicTacToe
   end
 
   def play
+<<<<<<< HEAD
     until over?
       turn
     end
 
+=======
+    turn until over?
+>>>>>>> 19bc5813254cbb365b14a85b1ab029412d274135
     if won?
       puts "Congratulations #{winner}!"
     elsif draw?
